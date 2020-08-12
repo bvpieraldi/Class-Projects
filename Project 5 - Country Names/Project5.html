@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Project 5</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="Project5.css" />
+    <script src="Project5.js"></script>
+</head>
+
+<body onLoad="main()">
+    <p id="countryList"></p>
+
+    <form>
+        <fieldset>
+            <legend>Controls</legend>
+            <table>
+                <tr>
+                    <td id="color">
+
+                        <label><input type="radio" name="fontColor" checked="checked" id="blackButton"> Black </label><br>
+                        <label><input type="radio" name="fontColor" id="whiteButton" > White </label><br>
+                        <label><input type="radio" name="fontColor" id="blueButton"> Blue </label><br>
+
+
+					</td>
+                    <td>
+
+                        <label>Font:
+                        <select id="fontFamily">
+                        <option id="arial" value="arial">Arial</option>
+                        <option id="timesNewRoman" value="times new roman">Times New Roman</option>
+                        <option id="courierNew" value="Courier New">Courier New</option>
+                    </select>
+                        </label>
+                    </td>
+
+                    <td id="length">
+
+                        <label><input type="text" id="minLength" size="1" value="0"> Minimum Length</label><br>
+                        <label><input type="text" id="maxLength" size="1" value="20"> Maximum Length</label><br>
+                        <input id="myButton" type="button" value="update">
+
+                    </td>
+
+                    <td>
+
+                        <label><input type="checkbox" id="noA"> Exclude words with 'N'</label><br>
+                        <label><input type="checkbox" id="noB"> Exclude words with 'A' </label><br>
+                        <label><input type="checkbox" id="noC"> Exclude words with 'O' </label>
+
+                    </td>
+
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+
+
+</body>
+
+</html>

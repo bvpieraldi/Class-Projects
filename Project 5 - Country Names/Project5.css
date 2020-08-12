@@ -1,0 +1,26 @@
+/* Put all of your style rules in this file */
+
+body {
+    background-color:grey;
+}
+
+table {
+    margin:auto;    
+}
+
+td {
+    vertical-align:top;
+    text-align:left;
+    font-family: 'arial'; 
+    font-size: 15pt;
+    padding:1.5em;
+}
+
+p {
+    text-align:center;
+    font-size: 20pt;
+}
+
+td {
+    
+}
