@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+    <title>Hidden Turkey Game</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Display.css" />
+</head>
+
+
+<body>
+
+    <table>
+        <tr>
+            <th colspan="4" id="daycount">Day 1</th>
+        </tr>
+
+        <tr>
+            <td><img id="pic1" src="Images/pumpkin.gif" alt="pumpkin" onClick="hideMe(1);" /></td>
+
+            <td><img id="pic2" src="Images/pumpkin.gif" alt="pumpkin" onClick="hideMe(2);" /></td>
+
+            <td><img id="pic3" src="Images/pumpkin.gif" alt="pumpkin" onClick="hideMe(3);" /></td>
+
+            <td><img id="pic4" src="Images/pumpkin.gif" alt="pumpkin" onClick="hideMe(4);" /></td>
+			
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td colspan="4" id="message">Where will you hide?</td>
+        </tr>
+    </table>
+
+    <script>
+        var hidingPlace;
+		var explosionLocation;
+
+        function hideMe(location) {
+            hidingPlace = location
+            if (hidingPlace === 1) {
+                pic1.src = "Images/hide.gif"
+                message.innerHTML = "GOOD LUCK!"
+                setTimeout(explode, 1800);
+            }
+            if (hidingPlace === 2) {
+                pic2.src = "Images/hide.gif"
+                message.innerHTML = "GOOD LUCK!"
+                setTimeout(explode, 1800);
+            }
+            if (hidingPlace === 3) {
+                pic3.src = "Images/hide.gif"
+                message.innerHTML = "GOOD LUCK!"
+                setTimeout(explode, 1800);
+            }
+            if (hidingPlace === 4) {
+                pic4.src = "Images/hide.gif"
+                message.innerHTML = "GOOD LUCK!"
+                setTimeout(explode, 1800);
+            }
+
+        }
+
+        function explode() {
+          explosionLocation = Math.floor(Math.random() * 4) + 1;
+            if (explosionLocation === 1) {
+                pic1.src = "Images/explode.gif"
+                pic2.src = "Images/pumpkin.gif"
+                pic3.src = "Images/pumpkin.gif"
+                pic3.src = "Images/pumpkin.gif"
+                setTimeout(conclusion, 1700);
+            }
+            if (explosionLocation === 2) {
+                pic2.src = "Images/explode.gif"
+                pic1.src = "Images/pumpkin.gif"
+                pic3.src = "Images/pumpkin.gif"
+                pic4.src = "Images/pumpkin.gif"
+                setTimeout(conclusion, 1700);
+            }
+
+            if (explosionLocation === 3) {
+                pic3.src = "Images/explode.gif"
+                pic1.src = "Images/pumpkin.gif"
+                pic2.src = "Images/pumpkin.gif"
+                pic4.src = "Images/pumpkin.gif"
+                setTimeout(conclusion, 1700);
+            }
+
+            if (explosionLocation === 4) {
+                pic4.src = "Images/explode.gif"
+                pic1.src = "Images/pumpkin.gif"
+                pic2.src = "Images/pumpkin.gif"
+                pic3.src = "Images/pumpkin.gif"
+                setTimeout(conclusion, 1700);
+            }
+            if (hidingPlace != explosionLocation) {
+                message.innerHTML = "You live to see another day!"
+
+            } else {
+                message.innerHTML = "You have died..."
+
+            }
+        }
+
+        var dayCounter = 1;
+        
+        function conclusion() {
+            if (hidingPlace != explosionLocation) {
+                dayCounter = dayCounter + 1;
+                reset();
+            } else {
+                reset();
+				if (dayCounter===1) {
+					  alert("You have survived " + dayCounter + " Day")
+				}
+                if (dayCounter>1) {
+					  alert("You have survived " + dayCounter + " Days")
+				}
+                dayCounter = 1;
+                reset();
+            }
+        }
+
+
+        function reset() { 
+
+            daycount.innerHTML = ("Day " + dayCounter);
+            pic1.src = "Images/pumpkin.gif"
+            pic2.src = "Images/pumpkin.gif"
+            pic3.src = "Images/pumpkin.gif"
+            pic4.src = "Images/pumpkin.gif"
+            message.innerHTML = "Where will you hide?"
+        }
+
+    </script>
+
+
+</body>
+
+
+</html>
