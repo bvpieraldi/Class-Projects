@@ -1,0 +1,94 @@
+body
+{
+background-image: url(Images/mybg.jpg);
+}
+
+#bgsection
+{
+    background-color: #7bbabf;
+    margin: auto;
+    width: 85%;
+    border: 20px ridge purple;
+    margin-top: 5%;
+    padding-bottom: 5%;
+}
+
+h3
+{
+	text-align: center;
+    font-family: impact;
+    font-size: 1.6em;
+    letter-spacing: 15px;
+    color: black;
+    text-decoration: underline;
+    padding-top: 20px;
+}
+
+#rightside
+{
+	vertical-align: top;
+}
+
+#leftside
+{
+    vertical-align: top;
+}
+
+#thetable
+{
+	background-color: #0b3656;
+    margin: auto;
+}
+
+.tdborder
+{
+    border: 18px lightgray ridge;
+    padding: 15px;
+}
+
+table
+{
+ width: 90%;
+}
+
+img
+{
+    
+    padding: 0 20px;
+}
+
+.name
+{
+    padding-bottom: 25px;
+    text-align: center;
+    color: white;
+}
+
+th
+{
+    font-family: impact;
+    text-align: left;
+    font-size: 1.5em;
+    color: #f15848;
+    padding-bottom: 15px;
+    
+}
+
+#type
+{
+    color: white;
+    font-family: arial;
+    font-size: 1.4em;
+}
+
+th::first-letter
+{
+    font-size: 2em;
+}
+
+p
+{
+    margin: 0;
+    padding-bottom: 25px;
+    width: 110%;
+}
