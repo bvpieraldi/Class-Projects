@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    
+<head>
+    <title>Fun With Loops</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="display.css"> 
+ </head>
+
+<body>
+
+    <script>
+        function randomNumber(from, to) { 
+ 		return Math.floor(Math.random() * (to - from + 1)) + from;
+        }
+        
+        function colorSqaure(red, green, blue) {
+        document.writeln("<td style='background-color: rgb(" + red + "," + green + "," + blue + ");'> </td>"); 
+        }
+                
+        do {
+            var activityChoice = Number(prompt("What would you like to do? \n 1. Play a game \n 2. See some art \n 3. Watch time go by \n 4. Something else fun")); }
+                while(activityChoice < 1 || activityChoice > 4);
+		
+        if (activityChoice === 1) {
+            var theValue = randomNumber(1, 100);
+            do {
+                var guess = Number(prompt("I'm thinking of a number between 1 and 100. (" + theValue + "). Try to guess what it is..."));}
+                    while(guess < 1 || guess > 100);
+ 		
+		  
+        var guessCount = 1;
+		
+        while (guess !== theValue) {
+		  if (guess < theValue) { 
+		  var guess = Number(prompt("That's too small. Guess again.")); 
+		  } else { 
+		  var guess =	Number(prompt("That's too large. Guess again."));
+		  }
+            guessCount = guessCount + 1;
+            }
+        
+		if (guessCount >= 2){ alert("THAT'S CORRECT! It took you " + guessCount + " guesses."); }
+        else { alert("THAT'S CORRECT! It took you " + guessCount + " guess."); }
+            
+        do {
+            var activityChoice = Number(prompt("What would you like to do? \n 1. Play a game \n 2. See some art \n 3. Watch time go by \n 4. Something else fun")); }
+            while(activityChoice < 1 || activityChoice > 4);    
+            }
+        
+        if (activityChoice === 2) {
+		var rows = Number(prompt("How many rows of color would you like?"));
+		var cols = Number(prompt("How many columns of color would you like?")); 
+        document.writeln("<table>");
+    
+		var currentRow = 1;
+			
+            while (currentRow <= rows) {
+        	document.writeln("<tr>");
+       
+		
+		var currentCol = 1;
+			
+                while (currentCol <= cols) {
+		var red = randomNumber(0, 255);
+        var green = randomNumber(0, 255);
+        var blue = randomNumber(0, 255);
+		          colorSqaure(red, green, blue);
+                    currentCol = currentCol + 1;
+        }
+            
+		document.writeln("</tr>");
+            currentRow = currentRow + 1;
+        }
+		  document.writeln("</table>");
+		}
+        
+        if (activityChoice === 3) {
+        
+			var hour = 0;
+			while (hour < 12) {
+				   
+				var minute = 0;
+				while (minute < 60) {
+					
+					var second = 0;
+					while (second < 60) {
+					
+				
+						if (hour === 0) {
+						document.writeln("<p> 12" + ":" + minute + ":" + second + "</p>");
+						} 
+						else {
+						document.writeln("<p>" + hour + ":" + minute + ":" + second + "</p>");}
+						
+					
+						second = second + 1; 
+					}
+					
+					minute = minute + 1;
+				}
+					
+				
+				hour = hour + 1;	
+			}
+			
+			
+         }
+		
+		if (activityChoice === 4) {
+			    var triva= Number(prompt("Welcome to the triva game of fun! Pick your catagory! \n 1. Movie \n 2. Music \n 3. Sports \n 4. Literature")); 
+                while(activityChoice < 1 || activityChoice > 4);
+		
+				if (triva === 1) {
+					var movieAnswer = "Lilo & Stitch";
+					do {
+						var movieGuess = prompt("What is the name of the animated science fiction comedy-drama film released in 2002 about a Hawaiin girl and her unusual pet? (" + movieAnswer + ")"); }
+						while (movieGuess!=movieAnswer);
+							
+					if (movieGuess===movieAnswer) {
+						var counter = 1;
+						while (counter <= 10) {
+						document.writeln("<h2 style= 'color: red;'> YOU GUESSED CORRECTLY! </h2>");
+							counter = counter + 1; 
+	
+										 }}
+				
+				}
+			
+			if (triva === 2) {
+					var musicAnswer = "Paul McCartney";
+					do {
+						var musicGuess = prompt("Which of the Beatles is barefoot on the Abby Road album cover? (" + musicAnswer + ")"); }
+						while (musicGuess!=musicAnswer);
+							
+					if (musicGuess===musicAnswer) {
+						var counter = 1;
+						while (counter <= 10) {
+						document.writeln("<h2 style= 'color: red;'> YOU GUESSED CORRECTLY! </h2>");
+							counter = counter + 1; 
+	
+										 }}
+				
+				}
+			
+			if (triva === 3) {
+					var sportsAnswer = "Deion Sanders";
+					do {
+						var sportsGuess = prompt("Who is the only athlete ever to play in a Super Bowl and a World Series? (" + sportsAnswer + ")"); }
+						while (sportsGuess!=sportsAnswer);
+							
+					if (sportsGuess===sportsAnswer) {
+						var counter = 1;
+						while (counter <= 10) {
+						document.writeln("<h2 style= 'color: red;'> YOU GUESSED CORRECTLY! </h2>");
+							counter = counter + 1; 
+	
+										 }}
+				
+				}
+			
+			if (triva === 4) {
+					var literatureAnswer = "F. Scott Fitzgerald";
+					do {
+						var literatureGuess = prompt("Which American author wrote the novel 'The Great Gatsby', published in 1922? (" + literatureAnswer + ")"); }
+						while (literatureGuess!=literatureAnswer);
+							
+					if (literatureGuess===literatureAnswer) {
+						var counter = 1;
+						while (counter <= 10) {
+						document.writeln("<h2 style= 'color: red;'> YOU GUESSED CORRECTLY! </h2>");
+							counter = counter + 1; 
+	
+										 }}
+				
+				}
+		}
+    </script>
+</body>
+    </html>
